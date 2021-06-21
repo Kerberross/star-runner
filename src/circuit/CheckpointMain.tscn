@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/circuit/Checkpoint.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/circuit/CheckpointMain.gd" type="Script" id=2]
+
+[node name="Checkpoint" instance=ExtResource( 1 )]
+script = ExtResource( 2 )

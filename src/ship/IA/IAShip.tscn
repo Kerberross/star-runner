@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://src/ship/AbstractShip.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/ship/IA/IAShip.gd" type="Script" id=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+flags_unshaded = true
+albedo_color = Color( 1, 0, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=2]
+flags_unshaded = true
+albedo_color = Color( 0, 1, 0.0392157, 1 )
+
+[sub_resource type="SpatialMaterial" id=3]
+flags_unshaded = true
+albedo_color = Color( 0, 0.298039, 1, 1 )
+
+[node name="Ship" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="debug" type="ImmediateGeometry" parent="." index="7"]
+visible = false
+material_override = SubResource( 1 )
+
+[node name="debug2" type="ImmediateGeometry" parent="." index="8"]
+visible = false
+material_override = SubResource( 2 )
+
+[node name="debug3" type="ImmediateGeometry" parent="." index="9"]
+visible = false
+material_override = SubResource( 3 )

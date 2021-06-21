@@ -1,0 +1,271 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://src/GUI/medium_font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://src/GUI/large_font.tres" type="DynamicFont" id=2]
+[ext_resource path="res://src/GUI/ButtonStyle.tres" type="StyleBox" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 1, 0.207843, 0.207843, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0, 0, 0, 0.156863 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.34902, 0.490196, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0, 0, 0, 0.156863 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.34902, 1, 0.466667, 1 )
+
+[node name="Gui" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 0.594604
+margin_top = 0.0648804
+margin_right = 0.594604
+margin_bottom = 0.0648804
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Health" type="ProgressBar" parent="."]
+margin_left = 25.0
+margin_top = 25.0
+margin_right = 325.0
+margin_bottom = 45.0
+custom_styles/fg = SubResource( 1 )
+custom_styles/bg = SubResource( 2 )
+value = 100.0
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Shield" type="ProgressBar" parent="."]
+margin_left = 25.0
+margin_top = 45.0
+margin_right = 325.0
+margin_bottom = 65.0
+custom_styles/fg = SubResource( 3 )
+custom_styles/bg = SubResource( 4 )
+value = 100.0
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Boost" type="ProgressBar" parent="."]
+margin_left = 25.0
+margin_top = 65.0
+margin_right = 325.0
+margin_bottom = 75.0
+custom_styles/fg = SubResource( 5 )
+custom_styles/bg = SubResource( 4 )
+value = 100.0
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerLap" type="HBoxContainer" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -69.3345
+margin_top = -58.3848
+margin_right = -23.3345
+margin_bottom = -18.3848
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Lap" type="Label" parent="PlayerLap"]
+margin_top = 2.0
+margin_right = 17.0
+margin_bottom = 38.0
+custom_fonts/font = ExtResource( 1 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SPACER" type="Label" parent="PlayerLap"]
+margin_left = 21.0
+margin_top = 2.0
+margin_right = 33.0
+margin_bottom = 38.0
+custom_fonts/font = ExtResource( 1 )
+text = "/"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MaxLap" type="Label" parent="PlayerLap"]
+margin_left = 37.0
+margin_top = 2.0
+margin_right = 54.0
+margin_bottom = 38.0
+custom_fonts/font = ExtResource( 1 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LeaderBoard" type="VBoxContainer" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -188.269
+margin_top = 15.119
+margin_right = -18.2688
+margin_bottom = 51.119
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Header" type="Label" parent="LeaderBoard"]
+margin_right = 170.0
+margin_bottom = 36.0
+custom_fonts/font = ExtResource( 1 )
+text = "Leaderboard"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EndResult" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -175.5
+margin_top = -30.0
+margin_right = 175.5
+margin_bottom = 30.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Loser" type="HBoxContainer" parent="EndResult"]
+visible = false
+margin_right = 351.0
+margin_bottom = 60.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label" type="Label" parent="EndResult/Loser"]
+margin_right = 319.0
+margin_bottom = 60.0
+custom_fonts/font = ExtResource( 2 )
+text = "YOUR PLACE: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="place" type="Label" parent="EndResult/Loser"]
+margin_left = 323.0
+margin_right = 351.0
+margin_bottom = 60.0
+custom_fonts/font = ExtResource( 2 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Winner" type="HBoxContainer" parent="EndResult"]
+visible = false
+margin_right = 351.0
+margin_bottom = 60.0
+alignment = 1
+
+[node name="Winner" type="Label" parent="EndResult/Winner"]
+margin_left = 73.0
+margin_right = 277.0
+margin_bottom = 60.0
+custom_fonts/font = ExtResource( 2 )
+text = "YOU WIN"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Buttons" type="HBoxContainer" parent="EndResult"]
+visible = false
+margin_right = 351.0
+margin_bottom = 38.0
+alignment = 1
+
+[node name="Restart" type="Button" parent="EndResult/Buttons"]
+margin_left = 69.0
+margin_right = 168.0
+margin_bottom = 38.0
+custom_styles/hover = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 3 )
+custom_styles/focus = ExtResource( 3 )
+custom_styles/disabled = ExtResource( 3 )
+custom_styles/normal = ExtResource( 3 )
+custom_fonts/font = ExtResource( 1 )
+text = "Restart"
+
+[node name="Label" type="Label" parent="EndResult/Buttons"]
+margin_left = 172.0
+margin_top = 12.0
+margin_right = 200.0
+margin_bottom = 26.0
+text = "       "
+
+[node name="Menu" type="Button" parent="EndResult/Buttons"]
+margin_left = 204.0
+margin_right = 282.0
+margin_bottom = 38.0
+custom_styles/hover = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 3 )
+custom_styles/focus = ExtResource( 3 )
+custom_styles/disabled = ExtResource( 3 )
+custom_styles/normal = ExtResource( 3 )
+custom_fonts/font = ExtResource( 1 )
+text = "Menu"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Counter" type="HBoxContainer" parent="EndResult"]
+margin_right = 351.0
+margin_bottom = 60.0
+alignment = 1
+
+[node name="Second" type="Label" parent="EndResult/Counter"]
+margin_left = 150.0
+margin_right = 178.0
+margin_bottom = 60.0
+custom_fonts/font = ExtResource( 2 )
+text = "0"
+
+[node name="Dot" type="Label" parent="EndResult/Counter"]
+margin_left = 182.0
+margin_right = 196.0
+margin_bottom = 60.0
+custom_fonts/font = ExtResource( 2 )
+text = "."
+
+[node name="Milli" type="VBoxContainer" parent="EndResult/Counter"]
+margin_left = 200.0
+margin_right = 200.0
+margin_bottom = 60.0
+alignment = 2
+
+[node name="Control" type="Control" parent="EndResult/Counter/Milli"]
+margin_top = 60.0
+margin_bottom = 60.0
+
+[node name="MilliSecond" type="Label" parent="EndResult/Counter/Milli/Control"]
+margin_top = -41.0
+margin_right = 34.0
+margin_bottom = -4.0
+custom_fonts/font = ExtResource( 1 )
+text = "00"
+__meta__ = {
+"_edit_use_anchors_": false
+}
